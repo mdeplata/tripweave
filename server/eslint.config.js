@@ -1,5 +1,7 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
+import prettierPlugin from 'eslint-plugin-prettier'
+import prettierConfig from 'eslint-config-prettier'
 
 export default [
   { ignores: ['dist', 'node_modules'] },
@@ -29,6 +31,7 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tseslint.plugin,
+      prettier: prettierPlugin,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -42,6 +45,7 @@ export default [
         },
       ],
       '@typescript-eslint/no-explicit-any': 'warn',
+      'prettier/prettier': ['error', { endOfLine: 'auto' }],
       'no-console': 'off',
     },
   },
