@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 
-import type {Express, Request, Response} from 'express'
+import type {Express} from 'express'
 
 dotenv.config();
 

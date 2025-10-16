@@ -1,0 +1,1 @@
+export const testUtil = () => console.log('This is a test utility function.');
