@@ -1,7 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import connectDB from './config/database';
+import connectDB from '@config/database';
+import authRouter from '@routes/auth.router';
+import planRouter from '@routes/plan.router';
 
 import type { Express, Request, Response } from 'express';
 
@@ -15,6 +17,9 @@ app.use(cors());
 app.use(express.json());
 
 connectDB();
+
+app.use('/api/auth', authRouter);
+app.use('/api/plans', planRouter);
 
 app.get('/api/health', async (_req: Request, res: Response) => {
   try {
