@@ -1,5 +1,11 @@
 import express from 'express';
-import { createPlan, readPlan, readPlans, updatePlan, deletePlan } from '@controllers/plan.controller';
+import {
+  createPlan,
+  readPlan,
+  readPlans,
+  updatePlan,
+  deletePlan,
+} from '@controllers/plan.controller';
 import { authenticate } from '@middleware/auth';
 
 const router = express.Router();
